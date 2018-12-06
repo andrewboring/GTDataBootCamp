@@ -1,6 +1,6 @@
-# GTDataBootCamp
+# GTDataBootCamp 
 
-This is a collection of homework assignments for Georgia Tech's Data Analytics Boot Camp. 
+This is a collection of completed homework assignments for Georgia Tech's Data Analytics Boot Camp. 
 
 ## Assignments:
 * 01 - Kickstart My Chart - Excel homework assignment
