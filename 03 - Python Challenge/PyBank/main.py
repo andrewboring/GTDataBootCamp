@@ -126,8 +126,10 @@ pl_decrease= [min(change_list, key=operator.itemgetter(3))[2], min(change_list, 
 
 average_pl = sum(jumpl) / len(jumpl)
 
+
 	
 # Print data!
+
 print("Financial Analysis")
 print("------------------")
 print("Total Months: " + str(row_counter))
@@ -136,5 +138,16 @@ print("Average Change: " + "$" + str(average_pl))
 print("Greatest Increase in Profits: " + str(pl_increase[0]) + " (" + str(pl_increase[1]) + ")" )
 print("Greatest Decrease in Profits: " + str(pl_decrease[0]) + " (" + str(pl_decrease[1]) + ")" )
 
-
 		
+# ...and write it to file.
+
+output = open('results.txt', 'w')
+output.write("Financial Analysis\n")
+output.write("------------------\n")
+output.write("Total Months: " + str(row_counter) + "\n")
+output.write("Total: $" + str(profit_loss) + "\n")
+output.write("Average Change: " + "$" + str(average_pl) + "\n")
+output.write("Greatest Increase in Profits: " + str(pl_increase[0]) + " (" + str(pl_increase[1]) + ")\n" )
+output.write("Greatest Decrease in Profits: " + str(pl_decrease[0]) + " (" + str(pl_decrease[1]) + ")\n" )
+output.close()
+
