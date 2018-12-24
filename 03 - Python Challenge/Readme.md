@@ -1,4 +1,4 @@
-##Note to TA/Instructor:
+## Note to TA/Instructor:
 
 I have a single repo for all homework to avoid cluttering up my github account since  I keep other projects there as well.
  The instructions for Python homework indicate creating a new repo, but i just created another folder for the challenge.
