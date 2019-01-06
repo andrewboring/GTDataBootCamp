@@ -5,4 +5,6 @@ This is a collection of completed homework assignments for Georgia Tech's Data A
 ## Assignments:
 * 01 - Kickstart My Chart - Excel homework assignment
 * 02 - VBA of Wall Street - VBA homework assignment
-* 03 - Py Me Up, Charlie [ In progress ]
+* 03 - Python Challenge - Python homework
+* 04 - Heros of Pymoli - Python + Pandas
+ 
