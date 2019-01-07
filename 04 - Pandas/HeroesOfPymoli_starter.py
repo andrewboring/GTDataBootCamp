@@ -10,7 +10,7 @@
 # ### Note
 # * Instructions have been included for each segment. You do not have to follow them exactly, but they are included to help you think through the steps.
 
-# In[137]:
+# In[181]:
 
 
 # Dependencies and Setup
@@ -30,7 +30,7 @@ purchase_data.head()
 # * Display the total number of players
 # 
 
-# In[138]:
+# In[182]:
 
 
 #player_count = purchase_data["Purchase ID"].value_counts()
@@ -53,7 +53,7 @@ print ("Total Players: " + str(player_count))
 # * Display the summary data frame
 # 
 
-# In[139]:
+# In[184]:
 
 
 numgames = len(purchase_data["Item ID"].unique())
@@ -79,7 +79,7 @@ summary_table
 # 
 # 
 
-# In[150]:
+# In[242]:
 
 
 #genders = purchase_data.groupby(["Gender"])
@@ -88,7 +88,20 @@ summary_table
 # No good. This gives me 780 players (total rows). I need uniq screennames, then get value counts.
 # total_players is my total. I need to get the males, femals, other via uniq.
 #players = purchase_data["SN"].unique()
-pgenders = purchase_data.loc[:, ["SN","Gender"]]
+#males = purchase_data.loc[purchase_data["Gender"] == "Male", :]
+#print(males).value_counts()
+#purchase_data['Gender'].value_counts()
+genders = pd.DataFrame(purchase_data.groupby('Gender')['SN'].nunique())
+males =  genders.loc["Male","SN"]
+females = genders.loc["Female","SN"]
+other =  genders.loc["Other / Non-Disclosed","SN"]
+mperc = round((males / player_count) * 100)
+fperc = round((females / player_count) * 100)
+operc = round((other / player_count) * 100)
+gtable = pd.DataFrame({"Total":[males,females,other],
+                      "Percentage":[mperc,fperc,operc]},
+                      index=["Male","Female","Other / NA"],)
+gtable
 
 
 # 
