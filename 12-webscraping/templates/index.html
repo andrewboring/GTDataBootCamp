@@ -1,0 +1,72 @@
+<html>
+<head>
+<title>Mars Shoe Scraper</title>
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+</head>
+
+
+<body>
+
+
+
+<div class="container">
+	<div class="jumbotron text-center">
+		<h1>Mission to Mars</h1>
+		<p><a href="/scrape" role="button">Scrape that shit</a></p>
+	</div>
+</div>
+
+<div class="container">
+	<div class="row">
+		<div class="col-md-12">
+			<h3>News</h3>
+			<p><strong>{{ marsdata['latest_news']['headline'] }}</strong></p>
+			<p>{{ marsdata['latest_news']['content'] }}</p>
+		</div>
+	</div>
+	<div class="row">
+		<div class="col-md-8">
+			<h3>Featured Image from JPL</h3>
+			<img src={{ marsdata['jpl_featured_image'] }} class="img-fluid"> 
+		</div>
+		<div class="col-md-4"> 
+			<h3>Weather</h3>
+			<p>{{ marsdata['current_weather'] }}</p>
+			<hr />
+			<h3>Mars Facts</h3>
+			{{ marsdata.facts|safe }}
+		</div>
+	</div>
+	<div class="row">
+		<div class=col-md-12" align="center">
+			<h3>Hemispheres</h3>
+		</div>
+	</div>
+
+    <div class="row">
+    	<div class="col-md-6" align="right">
+       		<a href=" {{ marsdata.hemispheres[0]['img_url'] }} "><img src=" {{ marsdata.hemispheres[0]['img_url'] }}" class="img-fluid"></a>
+        	{{ marsdata.hemispheres[0]['title'] }}
+      	</div>
+      	<div class="col-md-6" align="left">
+            <a href=" {{ marsdata.hemispheres[1]['img_url'] }} "><img src=" {{ marsdata.hemispheres[1]['img_url'] }}" class="img-fluid"></a>
+            {{ marsdata.hemispheres[1]['title'] }}
+      	</div>   
+    </div>
+
+    <div class="row">
+      <div class="col-md-6" align="right">
+            <a href=" {{ marsdata.hemispheres[2]['img_url'] }} "><img src=" {{ marsdata.hemispheres[2]['img_url'] }}" class="img-fluid"></a>
+            {{ marsdata.hemispheres[2]['title'] }}
+      </div>
+      <div class="col-md-6" align="left">
+            <a href=" {{ marsdata.hemispheres[3]['img_url'] }} "><img src=" {{ marsdata.hemispheres[3]['img_url'] }}" class="img-fluid"></a>
+            {{ marsdata.hemispheres[3]['title'] }}
+      </div>   
+    </div>
+
+</div>
+
+
+</body>
+</html>
